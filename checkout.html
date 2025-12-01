@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h2 class="page-title">Checkout</h2>
+
+<div class="form-box">
+  <p>Name:</p>
+  <input type="text">
+
+  <p>Phone:</p>
+  <input type="text">
+
+  <p>Address:</p>
+  <textarea></textarea>
+
+  <br><br>
+  <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<script>
+function placeOrder() {
+  alert("Order placed successfully!");
+  localStorage.removeItem("cart");
+}
+</script>
+
+<footer>
+  <p>© 2025 Quick Store — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
