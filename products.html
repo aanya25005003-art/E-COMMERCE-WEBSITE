@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h2 class="page-title">Products</h2>
+
+<div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProduct()">
+</div>
+
+<div class="categories">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('clothes')">Clothes</button>
+    <button onclick="filterCategory('electronics')">Electronics</button>
+    <button onclick="filterCategory('accessories')">Accessories</button>
+    <button onclick="filterCategory('home-kitchen')">Home & Kitchen</button>
+    <button onclick="filterCategory('beauty')">Beauty & Personal Care</button> 
+    <button onclick="filterCategory('books')">Books & Stationery</button>
+    <button onclick="filterCategory('sports')">Sports & Fitness</button>
+    <button onclick="filterCategory('grocery')">Grocery</button>
+    <button onclick="filterCategory('health')">Health & Wellness</button>
+    <button onclick="filterCategory('toys')">Toys & Games</button>
+    <button onclick="filterCategory('shoes')">Shoes</button>
+    <button onclick="filterCategory('automotive')">Automotive</button>
+</div>
+
+<div class="products" id="productList">
+  
+    <div class="card" data-category="clothes">
+        <img src="web1.jpg">
+        <h3>T-Shirt</h3>
+        <p class="price">₹499</p>
+        <button onclick="addToCart('T-Shirt', 499)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="clothes">
+        <img src="web2.webp">
+        <h3>Hoodie</h3>
+        <p class="price">₹899</p>
+        <button onclick="addToCart('Hoodie', 899)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="clothes">
+        <img src="web3.jpg">
+        <h3>Jeans</h3>
+        <p class="price">₹1199</p>
+        <button onclick="addToCart('Jeans', 1199)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="electronics">
+        <img src="web4.webp">
+        <h3>Headphones</h3>
+        <p class="price">₹999</p>
+        <button onclick="addToCart('Headphones', 999)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="electronics">
+        <img src="web5.avif">
+        <h3>Smartphone</h3>
+        <p class="price">₹14,999</p>
+        <button onclick="addToCart('Smartphone', 14999)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="electronics">
+        <img src="web6.jpg">
+        <h3>Bluetooth Speaker</h3>
+        <p class="price">₹1,299</p>
+        <button onclick="addToCart('Bluetooth Speaker', 1299)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="accessories">
+        <img src="web7.jpg">
+        <h3>Watch</h3>
+        <p class="price">₹1499</p>
+        <button onclick="addToCart('Watch', 1499)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="accessories">
+        <img src="web8.jpg">
+        <h3>Sunglasses</h3>
+        <p class="price">₹699</p>
+        <button onclick="addToCart('Sunglasses', 699)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="accessories">
+        <img src="web9.webp">
+        <h3>Handbag</h3>
+        <p class="price">₹999</p>
+        <button onclick="addToCart('Handbag', 999)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="home-kitchen">
+        <img src="web10.webp">
+        <h3>Steel Water Bottle</h3>
+        <p class="price">₹499</p>
+        <button onclick="addToCart('Steel Water Bottle', 499)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="home-kitchen">
+        <img src="web11.jpg">
+        <h3>Cooking Pan</h3>
+        <p class="price">₹799</p>
+        <button onclick="addToCart('Cooking Pan', 799)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="home-kitchen">
+        <img src="web12.webp">
+        <h3>Knife Set</h3>
+        <p class="price">₹699</p>
+        <button onclick="addToCart('Knife Set', 699)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="beauty">
+        <img src="web13.webp">
+        <h3>Face Wash</h3>
+        <p class="price">₹199</p>
+        <button onclick="addToCart('Face Wash', 199)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="beauty">
+        <img src="web14.webp">
+        <h3>Shampoo</h3>
+        <p class="price">₹299</p>
+        <button onclick="addToCart('Shampoo', 299)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="beauty">
+        <img src="web15.jpg">
+        <h3>Moisturizer</h3>
+        <p class="price">₹349</p>
+        <button onclick="addToCart('Moisturizer', 349)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="books">
+        <img src="web16.jpg">
+        <h3>Notebook</h3>
+        <p class="price">₹99</p>
+        <button onclick="addToCart('Notebook', 99)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="books">
+        <img src="web17.webp">
+        <h3>Pen Set</h3>
+        <p class="price">₹59</p>
+        <button onclick="addToCart('Pen Set', 59)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="books">
+        <img src="web18.jpg">
+        <h3>Pencil</h3>
+        <p class="price">₹49</p>
+        <button onclick="addToCart('Story Book', 199)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-category="sports">
+        <img src="web19.jpg">
+        <h3>Football</h3>
+        <p class="price">₹499</p>
+        <button onclick="addToCart('Football', 499)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="sports">
+        <img src="web20.jpg">
+        <h3>Yoga Mat</h3>
+        <p class="price">₹699</p>
+        <button onclick="addToCart('Yoga Mat', 699)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="sports">
+        <img src="web21.jpg">
+        <h3>Dumbbells</h3>
+        <p class="price">₹999</p>
+        <button onclick="addToCart('Dumbbells', 999)">Add to Cart</button>
+    </div>
+
+
+    <div class="card" data-category="grocery">
+        <img src="web22.jpg">
+        <h3>Rice (1kg)</h3>
+        <p class="price">₹79</p>
+        <button onclick="addToCart('Rice (1kg)', 79)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="grocery">
+        <img src="web23.jpg">
+        <h3>Wheat Flour (1kg)</h3>
+        <p class="price">₹49</p>
+        <button onclick="addToCart('Wheat Flour (1kg)', 49)">Add to Cart</button>
+    </div>
+    <div class="card" data-category="grocery">
+        <img src="web24.jpg">
+        <h3>Tea Powder</h3>
+        <p class="price">₹99</p>
+        <button onclick="addToCart('Tea Powder', 99)">Add to Cart</button>
+    </div>
+
+
+    <div class="card" data-category="health">
+        <img src="web25.jpg">
+     <h3>Vitamin C Tablets</h3>
+        <p class="price">₹199</p>
+        <button onclick="addToCart('Vitamin C Tablets', 199)">Add to Cart</button>
+    </div>
+<div class="card" data-category="health">
+    <img src="web26.jpeg">
+    <h3>Protein Powder</h3>
+    <p class="price">₹999</p>
+    <button onclick="addToCart('Protein Powder', 999)">Add to Cart</button>
+</div>
+<div class="card" data-category="health">
+    <img src="web27.jpg">
+    <h3>First Aid Kit</h3>
+    <p class="price">₹149</p>
+    <button onclick="addToCart('First Aid Kit', 149)">Add to Cart</button>
+</div>
+
+
+<div class="card" data-category="toys">
+    <img src="web28.jpeg">
+    <h3>Puzzle Set</h3>
+    <p class="price">₹299</p>
+    <button onclick="addToCart('Puzzle Set', 299)">Add to Cart</button>
+</div>
+<div class="card" data-category="toys">
+    <img src="web29.webp">
+    <h3>Remote Car</h3>
+    <p class="price">₹799</p>
+    <button onclick="addToCart('Remote Car', 799)">Add to Cart</button>
+</div>
+<div class="card" data-category="toys">
+    <img src="web30.png">
+    <h3>Teddy Bear</h3>
+    <p class="price">₹499</p>
+    <button onclick="addToCart('Teddy Bear', 499)">Add to Cart</button>
+</div>
+
+<div class="card" data-category="shoes">
+    <img src="web31.webp">
+    <h3>Running Shoes</h3>
+    <p class="price">₹1799</p>
+    <button onclick="addToCart('Running Shoes', 1499)">Add to Cart</button>
+</div>
+<div class="card" data-category="shoes">
+    <img src="web33.jpg">
+    <h3>Crocks</h3>
+    <p class="price">₹499</p>
+    <button onclick="addToCart('Casual Sneakers', 999)">Add to Cart</button>
+</div>
+<div class="card" data-category="shoes">
+    <img src="web32.webp">
+    <h3>Formal Shoes</h3>
+    <p class="price">₹1499</p>
+    <button onclick="addToCart('Formal Shoes', 1299)">Add to Cart</button>
+</div>
+
+<div class="card" data-category="automotive">
+    <img src="web34.webp">
+    <h3>Car Shampoo</h3>
+    <p class="price">₹199</p>
+    <button onclick="addToCart('Car Shampoo', 199)">Add to Cart</button>
+</div>
+<div class="card" data-category="automotive">
+    <img src="web35.webp">
+    <h3>Bike Cover</h3>
+    <p class="price">₹399</p>
+    <button onclick="addToCart('Bike Cover', 399)">Add to Cart</button>
+</div>
+<div class="card" data-category="automotive">
+    <img src="web36.avif">
+    <h3>Tyre Inflator</h3>
+    <p class="price">₹999</p>
+    <button onclick="addToCart('Tyre Inflator', 999)">Add to Cart</button>
+</div>
+
+</div>
+
+
+<script>
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ name, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart!");
+}
+
+function searchProduct() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let title = card.querySelector("h3").innerText.toLowerCase();
+        card.style.display = title.includes(input) ? "block" : "none";
+    });
+}
+
+function filterCategory(category) {
+    let cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+        let productCategory = card.getAttribute("data-category");
+
+        if (category === "all" || productCategory === category) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
+<footer>
+  <p>© 2025 Quick Store — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
