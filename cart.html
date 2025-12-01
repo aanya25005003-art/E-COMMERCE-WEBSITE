@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h2 class="page-title">Your Cart 🛒</h2>
+
+<div id="cart-items" class="cart-box"></div>
+
+<h3 id="total" class="total"></h3>
+
+<a href="checkout.html"><button class="checkout-btn">Go to Checkout</button></a>
+
+<script>
+function loadCart() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let itemsDiv = document.getElementById("cart-items");
+  let total = 0;
+
+  itemsDiv.innerHTML = "";
+
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i].price;
+
+    itemsDiv.innerHTML += `
+      <div class="cart-item">
+         <p>${cart[i].name} - ₹${cart[i].price}</p>
+         <button onclick="removeItem(${i})">Remove</button>
+      </div>
+    `;
+  }
+
+  document.getElementById("total").innerHTML = "Total: ₹" + total;
+}
+
+function removeItem(index) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  loadCart();
+}
+
+loadCart();
+</script>
+
+<footer>
+  <p>© 2025 Quick Store — All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
