@@ -9,8 +9,11 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="products.html">Products</a>
-  <a href="cart.html">Cart</a>
+  <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+   <a href="checkout.html">Checkout</a>
+     <a href="reviews.html">Customer Reviews</a>
 </nav>
+
 
 <h2 class="page-title">Products</h2>
 
@@ -32,10 +35,12 @@
     <button onclick="filterCategory('toys')">Toys & Games</button>
     <button onclick="filterCategory('shoes')">Shoes</button>
     <button onclick="filterCategory('automotive')">Automotive</button>
+
 </div>
 
 <div class="products" id="productList">
-  
+
+
     <div class="card" data-category="clothes">
         <img src="web1.jpg">
         <h3>T-Shirt</h3>
@@ -58,7 +63,7 @@
     <div class="card" data-category="electronics">
         <img src="web4.webp">
         <h3>Headphones</h3>
-        <p class="price">₹999</p>
+        <p class="price">₹3999</p>
         <button onclick="addToCart('Headphones', 999)">Add to Cart</button>
     </div>
     <div class="card" data-category="electronics">
@@ -70,7 +75,7 @@
     <div class="card" data-category="electronics">
         <img src="web6.jpg">
         <h3>Bluetooth Speaker</h3>
-        <p class="price">₹1,299</p>
+        <p class="price">₹1,799</p>
         <button onclick="addToCart('Bluetooth Speaker', 1299)">Add to Cart</button>
     </div>
 
@@ -270,38 +275,7 @@
 </div>
 
 
-<script>
-function addToCart(name, price) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({ name, price });
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart!");
-}
-
-function searchProduct() {
-    let input = document.getElementById("searchInput").value.toLowerCase();
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-        let title = card.querySelector("h3").innerText.toLowerCase();
-        card.style.display = title.includes(input) ? "block" : "none";
-    });
-}
-
-function filterCategory(category) {
-    let cards = document.querySelectorAll(".card");
-
-    cards.forEach(card => {
-        let productCategory = card.getAttribute("data-category");
-
-        if (category === "all" || productCategory === category) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-</script>
+<script src="script.js"></script>
 
 <footer>
   <p>© 2025 Quick Store — All Rights Reserved</p>
