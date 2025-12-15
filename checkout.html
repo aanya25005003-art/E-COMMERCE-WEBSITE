@@ -15,7 +15,7 @@
 </nav>
 
 <h2 class="page-title">Checkout</h2>
-
+  
 <div class="form-box">
   <h3>Order Summary</h3>
   <div id="summary"></div>
@@ -35,28 +35,7 @@
   <button onclick="placeOrder()">Place Order</button>
 </div>
 
-<script>
-  function placeOrder() {
-    alert("Order placed successfully!");
-    localStorage.removeItem("cart");
-    updateCartCount();
-    document.getElementById("summary").innerText = "Total: ₹0";
-  }
-
-  function updateCartCount() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cartCount").innerText = cart.length;
-  }
-
-  
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let sum = 0;
-
-  cart.forEach(item => sum += item.price);
-  document.getElementById("summary").innerText = "Total: ₹" + sum;
-
-  updateCartCount();
-</script>
+<script src="script.js"></script>
 
 
 <footer>
