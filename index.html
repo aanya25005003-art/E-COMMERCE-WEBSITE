@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
+  <title>Quick Store - Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,24 +10,43 @@
   <h1>Welcome to Quick Store</h1>
   <p>Your happy shopping place!</p>
 </header>
- 
+
 <nav>
-  <a href="index.html">Home</a>
+  <a href="#" onclick="homePopup()">Home</a>
   <a href="products.html">Products</a>
-  <a href="cart.html">Cart</a>
+  <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+   <a href="checkout.html">Checkout</a>
+  <a href="reviews.html">Customer Reviews</a>
 </nav>
 
 <br>
-
+  
 <section class="center">
-  <h2 style="color: rgb(58, 58, 210);">Handpicked products for your perfect vibe.</h2>
+  <h2 style="color: rgb(58, 58, 210);">
+    Handpicked products for your perfect vibe.
+  </h2>
 </section>
 
-<h1 class="section-title" style="color: rgb(29, 87, 145);">Explore our wide range of categories and discover products tailored to your needs</h1>
+
+<section class="feature-strip">
+  <h2>✨ Popular Right Now ✨</h2>
+
+  <div class="feature-images">
+    <img src="web1.jpg" alt="Product 1">
+    <img src="web7.jpg" alt="Product 2">
+    <img src="web9.webp" alt="Product 3">
+    <img src="web31.webp" alt="Product 4">
+    <img src="web30.png" alt="Product 5">
+  </div>
+</section>
 
 <footer>
   <p>© 2025 Quick Store — All Rights Reserved</p>
 </footer>
 
+
+<script src="script.js"></script>
+
 </body>
 </html>
+
