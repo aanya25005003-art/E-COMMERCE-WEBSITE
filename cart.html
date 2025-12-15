@@ -9,7 +9,9 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="products.html">Products</a>
-  <a href="cart.html">Cart</a>
+  <a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+   <a href="checkout.html">Checkout</a>
+    <a href="reviews.html">Customer Reviews</a>
 </nav>
 
 <h2 class="page-title">Your Cart 🛒</h2>
@@ -20,37 +22,9 @@
 
 <a href="checkout.html"><button class="checkout-btn">Go to Checkout</button></a>
 
-<script>
-function loadCart() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let itemsDiv = document.getElementById("cart-items");
-  let total = 0;
 
-  itemsDiv.innerHTML = "";
 
-  for (let i = 0; i < cart.length; i++) {
-    total += cart[i].price;
-
-    itemsDiv.innerHTML += `
-      <div class="cart-item">
-         <p>${cart[i].name} - ₹${cart[i].price}</p>
-         <button onclick="removeItem(${i})">Remove</button>
-      </div>
-    `;
-  }
-
-  document.getElementById("total").innerHTML = "Total: ₹" + total;
-}
-
-function removeItem(index) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index, 1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-loadCart();
-</script>
+<script src="script.js"></script>
 
 <footer>
   <p>© 2025 Quick Store — All Rights Reserved</p>
